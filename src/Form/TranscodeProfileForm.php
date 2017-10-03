@@ -35,6 +35,7 @@ class TranscodeProfileForm extends EntityForm {
       '#disabled' => !$transcode_profile->isNew(),
     ];
 
+    // Custom property.
     $form['codec'] = [
       '#type' => 'textfield',
       '#title' => 'Codec',
@@ -51,7 +52,10 @@ class TranscodeProfileForm extends EntityForm {
    */
   public function save(array $form, FormStateInterface $form_state) {
     $transcode_profile = $this->entity;
+
+    // Set a custom property on the entity before save.
     $transcode_profile->setCodec($form_state->getValue('codec'));
+
     $status = $transcode_profile->save();
 
     switch ($status) {
@@ -66,6 +70,8 @@ class TranscodeProfileForm extends EntityForm {
           '%label' => $transcode_profile->label(),
         ]));
     }
+
+    // Redirect to the collection route.
     $form_state->setRedirectUrl($transcode_profile->toUrl('collection'));
   }
 
