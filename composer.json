@@ -1,0 +1,15 @@
+{
+  "name": "drupal/transcode_profile",
+  "description": "A demo module",
+  "type": "drupal-module",
+  "homepage": "http://multipurposegeek.com",
+  "authors": [
+    {
+      "name": "Eric Paul (mpgeek)",
+      "homepage": "https://www.drupal.org/u/mpdonadio",
+      "role": "Maintainer"
+    }
+  ],
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev"
+}
